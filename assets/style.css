@@ -3,3 +3,9 @@
   margin: 0px;
   padding: 0px;
 }
+.area {
+  margin: 30px auto;
+  width: 700px;
+  height: 700px;
+  border: black 1px solid;
+}
