@@ -3,11 +3,14 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  background-color:#f7f7f7;
+  background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
+}
 .area {
-  margin: 30px auto;
+  margin: 5px auto;
   width: 700px;
   height: 700px;
-  border: black 0px solid;
 }
 div {
   display: flex;
@@ -16,13 +19,23 @@ div {
 }
 div p {
   font-size: 13em;
-  width: 33%;
-  height: 33%;
-  border: 1px solid red;
-  background-color: green;
+  width: 33.33%;
+  height: 33.33%;
   text-align: center;
 }
 p {
   text-align: center;
   font-size: 3em;
+  color: #3b3b3b;
+}
+#five {
+  border: 5px #3b3b3b solid;
+}
+#four, #six {
+  border-top: 5px #3b3b3b solid;
+  border-bottom: 5px #3b3b3b solid;
+}
+#two, #eight {
+  border-left: 5px #3b3b3b solid;
+  border-right: 5px #3b3b3b solid;
 }

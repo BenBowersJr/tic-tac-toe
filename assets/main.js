@@ -45,11 +45,27 @@ function startGame() {
   }
 }
 
-function checkForWin() {
-  // we can check for wins like this
-  // have each grid have a id like a keyboard numpad.
-  // check if there is any win conditions by checking the squares ID's.
-  // if the textcontent of 1, 4, 7 are teh same. that player wins
+function checkForWin(turn) {
+  //check for all 8 win scenarios
+  if ((p1.textContent == turn && p2.textContent == turn && p3.textContent == turn) ||
+  (p4.textContent == turn && p5.textContent == turn && p6.textContent == turn) ||
+  (p7.textContent == turn && p8.textContent == turn && p9.textContent == turn) ||
+  (p1.textContent == turn && p4.textContent == turn && p7.textContent == turn) ||
+  (p2.textContent == turn && p5.textContent == turn && p8.textContent == turn) ||
+  (p3.textContent == turn && p6.textContent == turn && p9.textContent == turn) ||
+  (p1.textContent == turn && p5.textContent == turn && p9.textContent == turn) ||
+  (p3.textContent == turn && p5.textContent == turn && p7.textContent == turn)) {
+    //if win scenario detected, display winner
+    if (turn == "X") {
+      if(confirm('X wins! Restart?')){
+        window.location.reload();  
+    }
+    } else {
+      if(confirm('O wins! Restart?')){
+        window.location.reload();  
+    }
+    }
+  }
 }
 
 function move1() {
@@ -58,12 +74,14 @@ function move1() {
     // Do X turn stuff
     p1.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved1 && !isXTurn) {
     // do O turn stuff otherwise
-    p1.textContent = 'O'
+    p1.textContent = 'O';
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved1 = true;
@@ -74,12 +92,14 @@ function move2() {
     // Do X turn stuff
     p2.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved2 && !isXTurn) {
     // do O turn stuff otherwise
     p2.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("X");
   }
   // this makes it so they cant move in this square anymore
   moved2 = true;
@@ -90,12 +110,14 @@ function move3() {
     // Do X turn stuff
     p3.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved3 && !isXTurn) {
     // do O turn stuff otherwise
     p3.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved3 = true;
@@ -106,12 +128,14 @@ function move4() {
     // Do X turn stuff
     p4.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved4 && !isXTurn) {
     // do O turn stuff otherwise
     p4.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved4 = true;
@@ -122,12 +146,14 @@ function move5() {
     // Do X turn stuff
     p5.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved5 && !isXTurn) {
     // do O turn stuff otherwise
     p5.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved5 = true;
@@ -138,12 +164,14 @@ function move6() {
     // Do X turn stuff
     p6.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved6 && !isXTurn) {
     // do O turn stuff otherwise
     p6.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved6 = true;
@@ -154,28 +182,32 @@ function move7() {
     // Do X turn stuff
     p7.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved7 && !isXTurn) {
     // do O turn stuff otherwise
     p7.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved7 = true;
 }
 function move8() {
   // if not moved yet and its X's turn
-  if (!moved1 && isXTurn) {
+  if (!moved8 && isXTurn) {
     // Do X turn stuff
     p8.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved8 && !isXTurn) {
     // do O turn stuff otherwise
     p8.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved8 = true;
@@ -186,12 +218,14 @@ function move9() {
     // Do X turn stuff
     p9.textContent = 'X'
     isXTurn = false;
-    turnEl.textContent = "It is O's Turn."
+    turnEl.textContent = "It is O's Turn.";
+    checkForWin("X");
   } else if (!moved9 && !isXTurn) {
     // do O turn stuff otherwise
     p9.textContent = 'O'
     isXTurn = true;
-    turnEl.textContent = "It is X's Turn."
+    turnEl.textContent = "It is X's Turn.";
+    checkForWin("O");
   }
   // this makes it so they cant move in this square anymore
   moved9 = true;
